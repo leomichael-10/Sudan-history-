@@ -1,0 +1,124 @@
+/* Falcon Static Landing Page with Spinner */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', Arial, sans-serif;
+    background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 50%, #FFFFFF 100%);
+    direction: rtl;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Background */
+.home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position: center center;
+    filter: brightness(0.9);
+    z-index: -1;
+}
+
+/* Overlay Content */
+.overlay {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.overlay.visible {
+    opacity: 1;
+}
+
+/* Title Styling */
+.title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    color: #2c5530;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+/* Enter Button */
+.enter-btn {
+    background: linear-gradient(135deg, #2c5530, #8fbc8f);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.enter-btn:hover {
+    background: linear-gradient(135deg, #8fbc8f, #2c5530);
+}
+
+/* Loading Screen */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 50%, #FFFFFF 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #2c5530;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+.loading-text {
+    font-size: 1.2rem;
+    color: #2c5530;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

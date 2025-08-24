@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Timeline in Sudan (2004-2025) - Timeline</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">Sudan Digital History</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="timeline.html" class="nav-link active">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="impact.html" class="nav-link">Impact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="timeline-hero">
+            <div class="container">
+                <h1>Internet Evolution Timeline</h1>
+                <p>Explore the key milestones in Sudan's digital transformation from 2004 to 2025</p>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="container">
+                <div class="timeline-controls">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="technology">Technology</button>
+                    <button class="filter-btn" data-filter="social">Social Impact</button>
+                </div>
+
+                <div class="timeline-container">
+                    <div id="timeline-events"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-summary">
+            <div class="container">
+                <h2>Timeline Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h3>Early Years (2004-2008)</h3>
+                        <p>The foundation period with Mobitel's 2G services and Zain's acquisition, marking Sudan's entry into the mobile internet era.</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Growth Phase (2009-2017)</h3>
+                        <p>Rapid expansion with 3G and 4G networks, increased competition among providers, and growing internet adoption.</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Challenges & Resilience (2018-2023)</h3>
+                        <p>Period of internet shutdowns and political turmoil, testing the resilience of Sudan's digital infrastructure.</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Future Outlook (2024-2025)</h3>
+                        <p>Emergence of 5G technology and continued digital transformation, despite ongoing challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sudan Digital History Project. Educational coursework on web development.</p>
+        </div>
+    </footer>
+
+    <!-- Handlebars Template for Timeline Events -->
+    <script id="timeline-template" type="text/x-handlebars-template">
+        {{#each events}}
+        <div class="timeline-item" data-category="{{category}}">
+            <div class="timeline-marker">
+                <div class="timeline-year">{{year}}</div>
+            </div>
+            <div class="timeline-content">
+                <h3>{{event}}</h3>
+                <p>{{description}}</p>
+                <div class="timeline-meta">
+                    <span class="category-badge {{category}}">{{category}}</span>
+                    {{#if impact}}
+                    <span class="impact-level">Impact: {{impact}}</span>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script src="script.js"></script>
+    <script src="timeline.js"></script>
+</body>
+</html> 
