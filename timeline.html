@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internet Timeline in Sudan (2004-2025)</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internet Timeline in Sudan (2004-2025) - Timeline</title>
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </head>
 <body>
@@ -13,10 +13,21 @@
       <div class="nav-container">
         <h1 class="logo">Sudan Digital History</h1>
         <ul class="nav-menu">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="timeline.html" class="nav-link active">Timeline</a></li>
-          <li class="nav-item"><a href="impact.html" class="nav-link">Impact</a></li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="timeline.html" class="nav-link active">Timeline</a>
+          </li>
+          <li class="nav-item">
+            <a href="impact.html" class="nav-link">Impact</a>
+          </li>
         </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
     </nav>
   </header>
@@ -35,7 +46,7 @@
           <button class="filter-btn active" data-filter="all">All Events</button>
           <button class="filter-btn" data-filter="technology">Technology</button>
           <button class="filter-btn" data-filter="social">Social Impact</button>
-          <button class="filter-btn" data-filter="challenge">Challenges</button>
+          <button class="filter-btn" data-filter="challenges">Challenges</button>
         </div>
 
         <div class="timeline-container">
@@ -44,7 +55,6 @@
       </div>
     </section>
 
-    
     <section class="timeline-summary">
       <div class="container">
         <h2>Timeline Summary</h2>
@@ -72,11 +82,11 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Sudan Digital History Project.</p>
+      <p>&copy; 2025 Sudan Digital History Project. Educational coursework on web development.</p>
     </div>
   </footer>
 
-  <!-- Handlebars Template -->
+  <!-- Handlebars Template for Timeline Events -->
   <script id="timeline-template" type="text/x-handlebars-template">
     {{#each events}}
     <div class="timeline-item" data-category="{{category}}">
@@ -97,72 +107,22 @@
     {{/each}}
   </script>
 
+  <!-- Timeline Logic -->
+  <script src="timeline.js"></script>
+
+  <!-- Hamburger Toggle Fix -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      fetch("events.json")
-        .then(response => response.json())
-        .then(data => {
-          // Map history events
-          const historyEvents = data.Sudan_Internet_History.map(item => ({
-            year: item.year,
-            event: item.event,
-            description: item.impact,
-            category: categorizeEvent(item.event),
-            impact: "High"
-          }));
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
 
-          // Map challenges
-          const challengeEvents = data.Challenges.map(item => ({
-            year: "—",
-            event: item.challenge,
-            description: item.impact,
-            category: "challenge",
-            impact: "Ongoing"
-          }));
-
-          // Merge
-          const timelineData = { events: [...historyEvents, ...challengeEvents] };
-
-          // Render
-          const source = document.getElementById("timeline-template").innerHTML;
-          const template = Handlebars.compile(source);
-          const timelineHTML = template(timelineData);
-          document.getElementById("timeline-events").innerHTML = timelineHTML;
-
-          // Filtering
-          const filterButtons = document.querySelectorAll(".filter-btn");
-          filterButtons.forEach(btn => {
-            btn.addEventListener("click", function () {
-              const category = this.getAttribute("data-filter");
-              filterButtons.forEach(b => b.classList.remove("active"));
-              this.classList.add("active");
-              const items = document.querySelectorAll(".timeline-item");
-              items.forEach(item => {
-                if (category === "all" || item.dataset.category === category) {
-                  item.style.display = "flex";
-                } else {
-                  item.style.display = "none";
-                }
-              });
-            });
-          });
-        })
-        .catch(error => console.error("Error loading data:", error));
-    });
-
-    function categorizeEvent(eventText) {
-      const text = eventText.toLowerCase();
-      if (
-        text.includes("2g") || text.includes("3g") || text.includes("4g") ||
-        text.includes("5g") || text.includes("services") ||
-        text.includes("infrastructure") || text.includes("broadband") ||
-        text.includes("telecom") || text.includes("satellite") ||
-        text.includes("dsl")
-      ) {
-        return "technology";
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
       }
-      return "social";
-    }
+    });
   </script>
 </body>
 </html>
