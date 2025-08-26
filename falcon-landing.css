@@ -12,24 +12,23 @@ body {
     direction: rtl;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: first baseline;   /* Push content to the right */
+    align-items: center;         /* Keep vertically centered */
+    text-align: right;           /* Align text properly */
     overflow: hidden;
+    padding-right: 5%;           /* Add spacing from right edge */
 }
-
-/* Background */
-.home {
+/* Background image */
+.home{
     position: absolute;
     top: 0;
-    left: 0;
+    left:0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url(background.jpg);
-    background-size: cover;
     background-position: center center;
-    filter: brightness(0.9);
-    z-index: -1;
+    background-size: cover;
+
 }
 
 /* Overlay Content */
@@ -39,7 +38,9 @@ body {
     padding: 20px;
     opacity: 0;
     transition: opacity 1s ease;
+    max-width: 500px; /* optional, prevents text from stretching too wide */
 }
+
 
 .overlay.visible {
     opacity: 1;
@@ -122,3 +123,29 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+/* Language Switcher */
+.lang-switcher {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.lang-switcher button {
+    background: linear-gradient(135deg, #2c5530, #8fbc8f);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.lang-switcher button:hover {
+    background: linear-gradient(135deg, #8fbc8f, #2c5530);
+}
+

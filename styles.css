@@ -843,3 +843,12 @@ footer {
 .challenge-card p {
     color: var(--light-text);
 }
+.category-badge.challenge {
+  background: #ff4d4f;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+

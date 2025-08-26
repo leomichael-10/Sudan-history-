@@ -5,26 +5,42 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             console.log("JSON loaded:", data);
 
-            // Prepare events
+            // ===============================
+            // Merge Sudan_Internet_History + Challenges
+            // ===============================
+            const historyEvents = data.Sudan_Internet_History.map(item => ({
+                year: item.year,
+                event: item.event,
+                description: item.impact,
+                category: categorizeEvent(item.event),
+                impact: "High"
+            }));
+
+          const challengeEvents = data.Challenges.map(item => ({
+    year: "—", // use a dash instead of "Challenges"
+    event: item.challenge,
+    description: item.impact,
+    category: "challenge",
+    impact: "Ongoing"
+}));
+
+
+            // Combine both arrays
             const timelineData = {
-                events: data.Sudan_Internet_History.map(item => ({
-                    year: item.year,
-                    event: item.event,
-                    description: item.impact,
-                    category: categorizeEvent(item.event),
-                    impact: "High" // optional tag, you can adjust per event
-                }))
+                events: [...historyEvents, ...challengeEvents]
             };
 
+            // ===============================
             // Compile Handlebars template
+            // ===============================
             const source = document.getElementById("timeline-template").innerHTML;
             const template = Handlebars.compile(source);
             const timelineHTML = template(timelineData);
-
-            // Inject events into page
             document.getElementById("timeline-events").innerHTML = timelineHTML;
 
+            // ===============================
             // Filtering buttons
+            // ===============================
             const filterButtons = document.querySelectorAll(".filter-btn");
             filterButtons.forEach(btn => {
                 btn.addEventListener("click", function () {
@@ -43,46 +59,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                 });
             });
-
-            // Render Challenges if available
-            if (data.Challenges) {
-                renderChallenges(data.Challenges);
-            }
         })
         .catch(error => console.error("Error loading timeline data:", error));
 });
 
-// Categorize events for filtering
+// Categorize events
 function categorizeEvent(eventText) {
     const text = eventText.toLowerCase();
-    if (text.includes("2g") || text.includes("3g") || text.includes("4g") || text.includes("services") || text.includes("infrastructure")) {
+    if (
+        text.includes("2g") || text.includes("3g") || text.includes("4g") ||
+        text.includes("5g") || text.includes("services") ||
+        text.includes("infrastructure") || text.includes("broadband") ||
+        text.includes("telecom") || text.includes("satellite") ||
+        text.includes("dsl")
+    ) {
         return "technology";
-    } else if (text.includes("protest") || text.includes("revolution") || text.includes("youth") || text.includes("diaspora") || text.includes("startups")) {
-        return "social";
-    } else if (text.includes("shutdown") || text.includes("blackout") || text.includes("war") || text.includes("blocks") || text.includes("control")) {
-        return "challenges";
     }
-    return "technology"; // fallback
-}
-
-// Render challenges section
-function renderChallenges(challenges) {
-    const container = document.createElement("section");
-    container.classList.add("challenges-section");
-    container.innerHTML = `
-        <div class="container">
-            <h2>Key Digital Challenges in Sudan</h2>
-            <div class="challenges-grid">
-                ${challenges.map(c => `
-                    <div class="challenge-card">
-                        <h3>${c.challenge}</h3>
-                        <p>${c.impact}</p>
-                    </div>
-                `).join("")}
-            </div>
-        </div>
-    `;
-
-    // Insert just before footer (so it shows after the summary section)
-    document.querySelector("footer").before(container);
+    return "social";
 }

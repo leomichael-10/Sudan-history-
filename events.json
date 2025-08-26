@@ -1,95 +1,136 @@
 {
-    "Sudan_Internet_History": [
-      {
-        "year": 2004,
-        "event": "Mobitel introduces early internet services",
-        "impact": "This marked the official start of internet access in Sudan, though it was limited, expensive, and mainly restricted to government institutions, banks, and NGOs."
-      },
-      {
-        "year": 2006,
-        "event": "Zain acquires Mobitel",
-        "impact": "Zain’s entry increased competition and investments, leading to wider mobile coverage and affordable internet packages in major cities."
-      },
-      {
-        "year": 2008,
-        "event": "Sudanese universities adopt internet learning platforms",
-        "impact": "Higher education institutions began using online libraries and e-learning platforms, giving students better access to global knowledge."
-      },
-      {
-        "year": 2011,
-        "event": "Rapid growth of 3G mobile internet",
-        "impact": "Youth gained wider access to social media (Facebook, WhatsApp, Twitter), fueling digital communities and small-scale online businesses."
-      },
-      {
-        "year": 2013,
-        "event": "Government blocks internet during protests",
-        "impact": "The shutdown disrupted communication during anti-austerity protests and became a tool for political control, sparking global debates on digital rights."
-      },
-      {
-        "year": 2016,
-        "event": "Rise of digital banking and mobile money",
-        "impact": "Banks launched SMS and mobile money services, enabling people to transfer money digitally, though limited by poor infrastructure and trust issues."
-      },
-      {
-        "year": 2018,
-        "event": "Nationwide internet blackouts during revolution",
-        "impact": "Cutting internet access limited the spread of information, hurt businesses, and highlighted how much society depended on connectivity."
-      },
-      {
-        "year": 2020,
-        "event": "Sudan removed from US terrorism list",
-        "impact": "Allowed global tech companies (Google, Microsoft, PayPal) to legally provide services again, unlocking opportunities for developers and freelancers."
-      },
-      {
-        "year": 2021,
-        "event": "4G launched nationwide",
-        "impact": "Internet speed improved, boosting startups, education platforms, e-commerce, and digital activism."
-      },
-      {
-        "year": 2022,
-        "event": "Growth of Sudanese tech startups",
-        "impact": "Local apps for transport, food delivery, and education emerged, showing the potential of Sudan’s youth in digital innovation."
-      },
-      {
-        "year": 2023,
-        "event": "Civil war disrupts telecom infrastructure",
-        "impact": "Major shutdowns occurred, telecom towers destroyed, and companies struggled to maintain connectivity. Online businesses and remittances were heavily affected."
-      },
-      {
-        "year": 2024,
-        "event": "Sudanese diaspora launches satellite internet projects",
-        "impact": "Efforts began to bypass local infrastructure damage using Starlink and community mesh networks, improving connectivity in some regions."
-      },
-      {
-        "year": 2025,
-        "event": "Rebuilding digital infrastructure",
-        "impact": "Youth, NGOs, and tech activists are leading projects to restore stable internet, build digital literacy programs, and connect rural areas."
-      }
-    ],
-    "Challenges": [
-      {
-        "challenge": "High costs",
-        "impact": "Internet packages remain expensive compared to average income, limiting access for poorer communities."
-      },
-      {
-        "challenge": "Digital divide",
-        "impact": "Urban areas like Khartoum are more connected than rural regions, creating inequality in education and opportunities."
-      },
-      {
-        "challenge": "Government control & shutdowns",
-        "impact": "Frequent internet shutdowns during protests and wars hinder freedom of speech, businesses, and education."
-      },
-      {
-        "challenge": "Weak infrastructure",
-        "impact": "Civil war, outdated cables, and lack of investment make the internet unreliable and slow in many parts of Sudan."
-      },
-      {
-        "challenge": "Low digital literacy",
-        "impact": "Many citizens, especially older generations, lack the skills to use online platforms effectively."
-      },
-      {
-        "challenge": "Limited online payment systems",
-        "impact": "Restrictions on PayPal and other global systems prevent Sudanese from fully joining the global digital economy."
-      }
-    ]
-  }
+  "Sudan_Internet_History": [
+    {
+      "year": 2004,
+      "event": "Mobitel introduces early internet services",
+      "impact": "This marked the official start of internet access in Sudan, though it was limited, expensive, and mainly restricted to government institutions, banks, and NGOs."
+    },
+    {
+      "year": 2006,
+      "event": "Zain acquires Mobitel",
+      "impact": "Zain’s entry increased competition and investments, leading to wider mobile coverage and affordable internet packages in major cities."
+    },
+    {
+      "year": 2008,
+      "event": "Sudanese universities adopt internet learning platforms",
+      "impact": "Higher education institutions began using online libraries and e-learning platforms, giving students better access to global knowledge."
+    },
+    {
+      "year": 2009,
+      "event": "Canar Telecom expands fixed-line and broadband services",
+      "impact": "Canar, backed by Etisalat, became the main provider of landline internet and DSL in Sudan, though mostly limited to urban areas."
+    },
+    {
+      "year": 2010,
+      "event": "MTN Sudan introduces affordable mobile internet",
+      "impact": "MTN attracted youth and rural communities by offering prepaid internet bundles, making connectivity accessible outside Khartoum."
+    },
+    {
+      "year": 2011,
+      "event": "Rapid growth of 3G mobile internet",
+      "impact": "Youth gained wider access to social media (Facebook, WhatsApp, Twitter), fueling digital communities and small-scale online businesses."
+    },
+    {
+      "year": 2012,
+      "event": "Sudani expands outside Khartoum",
+      "impact": "Sudani aggressively built infrastructure in rural areas, becoming known as the ‘people’s network’ and connecting underserved regions."
+    },
+    {
+      "year": 2013,
+      "event": "Government blocks internet during protests",
+      "impact": "The shutdown disrupted communication during anti-austerity protests and became a tool for political control, sparking global debates on digital rights."
+    },
+    {
+      "year": 2016,
+      "event": "Rise of digital banking and mobile money",
+      "impact": "Banks launched SMS and mobile money services, enabling people to transfer money digitally, though limited by poor infrastructure and trust issues."
+    },
+    {
+      "year": 2018,
+      "event": "Nationwide internet blackouts during revolution",
+      "impact": "Cutting internet access limited the spread of information, hurt businesses, and highlighted how much society depended on connectivity."
+    },
+    {
+      "year": 2020,
+      "event": "Sudan removed from US terrorism list",
+      "impact": "Allowed global tech companies (Google, Microsoft, PayPal) to legally provide services again, unlocking opportunities for developers and freelancers."
+    },
+    {
+      "year": 2021,
+      "event": "4G launched nationwide",
+      "impact": "Internet speed improved, boosting startups, education platforms, e-commerce, and digital activism."
+    },
+    {
+      "year": 2022,
+      "event": "Growth of Sudanese tech startups",
+      "impact": "Local apps for transport, food delivery, and education emerged, showing the potential of Sudan’s youth in digital innovation."
+    },
+    {
+      "year": 2023,
+      "event": "Civil war disrupts telecom infrastructure",
+      "impact": "Major shutdowns occurred, telecom towers destroyed, and companies struggled to maintain connectivity. Online businesses and remittances were heavily affected."
+    },
+    {
+      "year": 2024,
+      "event": "Sudanese diaspora launches satellite internet projects",
+      "impact": "Efforts began to bypass local infrastructure damage using Starlink and community mesh networks, improving connectivity in some regions."
+    },
+    {
+      "year": 2025,
+      "event": "Rebuilding digital infrastructure",
+      "impact": "Youth, NGOs, and tech activists are leading projects to restore stable internet, build digital literacy programs, and connect rural areas."
+    }
+  ],
+  "Telecom_Companies": [
+    {
+      "name": "Zain",
+      "entry": "2006 (acquired Mobitel)",
+      "impact": "Expanded mobile coverage, made internet more affordable in major cities, and introduced modern 3G/4G services.",
+      "challenges": "High costs of maintaining infrastructure during war, government restrictions, and urban-rural divide."
+    },
+    {
+      "name": "MTN Sudan",
+      "entry": "2004",
+      "impact": "Brought affordable internet bundles, attracted youth and rural customers, and supported mobile money adoption.",
+      "challenges": "Struggled with government censorship and infrastructure damage during conflicts."
+    },
+    {
+      "name": "Sudani (Sudatel)",
+      "entry": "2005",
+      "impact": "Focused on connecting rural Sudan, building outside Khartoum first, and expanding access to underserved areas.",
+      "challenges": "Competition from Zain and MTN, poor infrastructure in war-affected regions, and limited innovation in urban centers."
+    },
+    {
+      "name": "Canar Telecom",
+      "entry": "2005",
+      "impact": "Specialized in landline broadband and DSL services, provided business connectivity, and modernized Sudan’s fixed-line internet.",
+      "challenges": "Limited reach outside urban centers, overshadowed by mobile operators, and impacted by sanctions."
+    }
+  ],
+  "Challenges": [
+    {
+      "challenge": "High costs",
+      "impact": "Internet packages remain expensive compared to average income, limiting access for poorer communities."
+    },
+    {
+      "challenge": "Digital divide",
+      "impact": "Urban areas like Khartoum are more connected than rural regions, creating inequality in education and opportunities."
+    },
+    {
+      "challenge": "Government control & shutdowns",
+      "impact": "Frequent internet shutdowns during protests and wars hinder freedom of speech, businesses, and education."
+    },
+    {
+      "challenge": "Weak infrastructure",
+      "impact": "Civil war, outdated cables, and lack of investment make the internet unreliable and slow in many parts of Sudan."
+    },
+    {
+      "challenge": "Low digital literacy",
+      "impact": "Many citizens, especially older generations, lack the skills to use online platforms effectively."
+    },
+    {
+      "challenge": "Limited online payment systems",
+      "impact": "Restrictions on PayPal and other global systems prevent Sudanese from fully joining the global digital economy."
+    }
+  ]
+}

@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="falcon-landing.css">
 </head>
 <body>
+    <!-- Language Switcher -->
+<div class="lang-switcher">
+    <button onclick="setLanguage('ar')">العربية</button>
+    <button onclick="setLanguage('en')">English</button>
+</div>
+
     <!-- Loading Screen -->
     <div class="loading" id="loading">
         <div class="loading-spinner"></div>
@@ -25,7 +31,7 @@
 
     <!-- Overlay Content -->
     <div class="overlay" id="overlay">
-        <h1 class="title">صقر الجديان – رحلة الإنترنت في السودان</h1>
+        <h1 class="title">صقر الجديان رحلة الإنترنت في السودان</h1>
         <p class="subtitle">اكتشف تاريخ التطور الرقمي في السودان من 2004 إلى 2025</p>
         <a href="timeline.html" class="enter-btn">أدخل</a>
     </div>
@@ -39,5 +45,32 @@
             }, 1500); // keep spinner visible for 1.5 seconds
         });
     </script>
+    <script>
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            document.getElementById("loading").classList.add("hidden");
+            document.getElementById("overlay").classList.add("visible");
+        }, 1500); // keep spinner visible for 1.5 seconds
+    });
+
+    function setLanguage(lang) {
+        if (lang === 'en') {
+            document.documentElement.lang = "en";
+            document.documentElement.dir = "ltr";
+            document.querySelector(".title").textContent = "Saqar Al Jedyan The Internet Journey in Sudan";
+            document.querySelector(".subtitle").textContent = "Explore Sudan’s digital evolution from 2004 to 2025";
+            document.querySelector(".enter-btn").textContent = "Enter";
+            document.querySelector(".loading-text").textContent = "Loading...";
+        } else {
+            document.documentElement.lang = "ar";
+            document.documentElement.dir = "rtl";
+            document.querySelector(".title").textContent = "صقر الجديان رحلة الإنترنت في السودان";
+            document.querySelector(".subtitle").textContent = "اكتشف تاريخ التطور الرقمي في السودان من 2004 إلى 2025";
+            document.querySelector(".enter-btn").textContent = "أدخل";
+            document.querySelector(".loading-text").textContent = "جاري تحميل الصفحة...";
+        }
+    }
+</script>
+
 </body>
 </html>
