@@ -16,14 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 impact: "High"
             }));
 
-          const challengeEvents = data.Challenges.map(item => ({
-    year: "—", // use a dash instead of "Challenges"
-    event: item.challenge,
-    description: item.impact,
-    category: "challenge",
-    impact: "Ongoing"
-}));
-
+            const challengeEvents = data.Challenges.map(item => ({
+                year: "—", // no year, just a dash
+                event: item.challenge,
+                description: item.impact,
+                category: "challenges", // <-- FIXED: matches button
+                impact: "Ongoing"
+            }));
 
             // Combine both arrays
             const timelineData = {
