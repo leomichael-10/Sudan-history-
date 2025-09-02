@@ -19,17 +19,22 @@ body {
     padding-right: 5%;           /* Add spacing from right edge */
 }
 /* Background image */
-.home{
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100vh;
-    background-image: url(background.jpg);
-    background-position: center center;
-    background-size: cover;
-
+.home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out; /* smooth fade */
+  opacity: 1;
 }
+.home.fade-out {
+  opacity: 0;
+}
+
 
 /* Overlay Content */
 .overlay {

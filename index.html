@@ -71,6 +71,42 @@
         }
     }
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const backgrounds = [
+      "images/bg1.jpg",
+      "images/bg2.jpg",
+      "images/bg3.jpg",
+      "images/bg4.jpg",
+      "images/bg5.jpg"
+    ];
+
+    let currentIndex = 0;
+    const homeSection = document.querySelector(".home");
+
+    function changeBackground() {
+      // fade out
+      homeSection.classList.add("fade-out");
+
+      // after fade out, change image, then fade in
+      setTimeout(() => {
+        homeSection.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+        homeSection.classList.remove("fade-out");
+        currentIndex = (currentIndex + 1) % backgrounds.length;
+      }, 1000); // must match the CSS transition time (1s)
+    }
+
+    // First image immediately
+    homeSection.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+    currentIndex++;
+
+    // Change every 5 seconds
+    setInterval(changeBackground, 5000);
+  });
+</script>
+
+
+
 
 </body>
 </html>
